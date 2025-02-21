@@ -3,10 +3,10 @@ const settings = {
     // Screens settings
     screens: {
         // From 1 to 3 : The number of monitors you have connected to your computer
-        number_of_screens: 1,
-        // number : The width of your screen
+        number_of_screens: 3,
+        // number : The width of your screen in px
         width: 1920,
-        // number : The height of your screen
+        // number : The height of your screen in px
         height: 1080
     },
     // true or false : Extend the wallpaper on all the monitors or each monitor has the wallpaper
@@ -21,14 +21,24 @@ const settings = {
         show_date: true,
         // true or false : If you want to show the time
         show_time: true,
-        // number : The position x of the top left corner of the overlay
-        x: 0,
-        // number : The position y of the top left corner of the overlay
-        y: 0,
-        // rgb : The foreground color of the text, see https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/rgb
-        color: "rgb(255, 255, 255 / 1)",
-        // rgb : The background color of the text, see https://developer.mozilla.org/en-US/docs/Web/CSS/color_value/rgb
-        background_color: "rgb(0, 0, 0 / 0)",
+        // string : The font size of the text, see https://developer.mozilla.org/fr/docs/Web/CSS/font-size
+        // To choose the font you want, replace font/font.ttf with your font
+        main_font_size: "35pt",
+        second_font_size: "20pt",
+        // number : The font weight of the text, see https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight
+        font_weight: 300,
+        // number : The width of the left bar in px
+        left_bar_width: 3,
+        // number : The position x in px of the top left corner of the overlay
+        x: 2860,
+        // number : The position y in px of the top left corner of the overlay
+        y: 230,
+        // number : The width of the overlay in px
+        width: 450,
+        // hex : The foreground color of the text, see https://developer.mozilla.org/en-US/docs/Web/CSS/hex-color
+        color: "#ffffffff",
+        // hex : The background color of the text, see https://developer.mozilla.org/en-US/docs/Web/CSS/hex-color
+        background_color: "#00000000",
         // true or false : If the user can select the text
         can_user_select: false,
     }
@@ -43,7 +53,7 @@ const wallpapers = {
         "6bb8d4561750c1d510ddabea8263d31334120f63.webp"
     ],
     // The default wallpaper if there is one, else, set "random"
-    default: "58c968ee998f073814426e02ad7ecbc5a7f3901b.webp"
+    default: "8f7155f522aae070ca97dbb312effe1e7c01acfd.webp"
 }
 
 // Language settings
@@ -111,4 +121,10 @@ const lang = {
     }
 }
 
-export { settings, lang, wallpapers }
+const config = {
+    settings,
+    lang,
+    wallpapers
+}
+
+export default config

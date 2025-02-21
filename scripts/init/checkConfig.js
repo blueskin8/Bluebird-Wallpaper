@@ -16,7 +16,12 @@ export default function checkConfig(config) {
                 y: "number",
                 color: "string",
                 background_color: "string",
-                can_user_select: "boolean"
+                can_user_select: "boolean",
+                main_font_size: "string",
+                second_font_size: "string",
+                width: "number",
+                font_weight: "number",
+                left_bar_width: "number"
             }
         },
         wallpapers: {
@@ -84,13 +89,13 @@ export default function checkConfig(config) {
     if (config.settings.overlay.y < 0) {
         errors.push("settings.overlay.y is invalid.")
     }
-    const rbg_regex = /^rgb\(\s*(\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3})\s*\/\s*(0(\.\d+)?|1(\.0)?)\s*\)$/
-    if (!rbg_regex.test(config.settings.overlay.color)) {
-        errors.push("settings.overlay.color is invalid.")
-    }
-    if (!rbg_regex.test(config.settings.overlay.background_color)) {
-        errors.push("settings.overlay.background_color is invalid.")
-    }
+    // const rbga_regex = /^rgb\(\s*(\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3})\s*\/\s*(0(\.\d+)?|1(\.0)?)\s*\)$/
+    // if (!rbga_regex.test(config.settings.overlay.color)) {
+    //     errors.push("settings.overlay.color is invalid.")
+    // }
+    // if (!rbga_regex.test(config.settings.overlay.background_color)) {
+    //     errors.push("settings.overlay.background_color is invalid.")
+    // }
 
     if (errors.length > 0) {
         const body = document.body

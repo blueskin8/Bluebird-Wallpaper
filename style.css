@@ -1,6 +1,13 @@
+@font-face {
+    font-family: "Font";
+    src:
+        url("font/font.ttf") format("truetype")
+}
+
 * {
     margin: 0;
     padding: 0;
+    font-family: 'Font';
     overflow: hidden;
 }
 
@@ -9,5 +16,46 @@ body {
 }
 
 #bg {
+    z-index: -10;
     display: flex;
+}
+
+#bg>div {
+    z-index: -9;
+}
+
+#overlay {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: fixed;
+    z-index: 10;
+    min-width: 20px;
+    min-height: 100px;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+#overlay > * {
+    margin-left: 25px;
+}
+
+#overlay::before {
+    position: absolute;
+    z-index: 10;
+    content: "";
+    border-radius: 5px;
+    height: calc(100% - 2 * 40px);
+}
+
+#times {
+    display: flex;
+    gap: 30px;
+    /* justify-content: space-evenly; */
+}
+
+.time-container {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
 }
