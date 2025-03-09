@@ -19,7 +19,7 @@ export default function () {
     if (config.settings.overlay.show_date) {
         let date_str = []
         const date = new Date()
-        date_str.push(Object.values(lang.days)[date.getDay() - 1])
+        date_str.push(Object.values(lang.days)[date.getDay() == 0 ? 6 : date.getDay() - 1])
         date_str.push(date.getDate())
         date_str.push(Object.values(lang.months)[date.getMonth()])
         date_str = date_str.join(" ")
